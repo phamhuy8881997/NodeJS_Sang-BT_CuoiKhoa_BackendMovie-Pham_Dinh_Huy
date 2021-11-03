@@ -1,0 +1,365 @@
+++++++++++++++++++++++++++++++++++ hướng dẫn test api movie ++++++++++++++++++++++++++++++++++++++
++++++ lưu ý ++++++
+- dùng postman test {{url}} = http://localhost:8888
+- api gồm 4 mục chính:
+	* user: {{url}}/user 
+	* theater: {{url}}/theater
+	* movie: {{url}}/movies
+	* auth: {{url}}/login
+- nếu test tính năng reset password vui lòng cập nhật mail vs password cụ thể vào file .env
+- không thực hiện thao tác xóa với dữ liệu mẫu có sẵn do sequelize tạo ra
+- chỉ thêm xóa sửa các dự liệu do mình tự tạo ra
+//--------
+- nếu không thực hiện tính năng reset password được vui lòng setting gmail:
+//Go to : https://www.google.com/settings/security/lesssecureapps
+//set the Access for less secure apps setting to Enable
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++++ Test API User +++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--------------- tính năng tạo mới tài khoản --------------------
+- URL: {{url}}/user/
+- http: POST
+- dữ liệu thêm ( raw Json )
+	{
+      		"name":"le van teo",
+      		"taiKhoan":"teoem",
+      		"matKhau": "9999",
+      		"SDT":"0909123123",
+      		"email":"teoem1@gmail.com",
+      		"avatar":null,
+      		"phanLoai":"client"
+	}
+--------------- tính năng lấy thông tin user -------------------
+- URL: {{url}}/user/findDetail
+- http: GET
+- dữ liệu thêm ( header )
+ 	token : ( token trả về từ tính năng login )
+--------------- tính năng lấy thông tin user và vé đã đặt-------
+- URL: {{url}}/user/userDetailAll
+- http: GET
+- dữ liệu thêm ( header )
+ 	token : ( token trả về từ tính năng login )
+--------------- tính năng cập nhật tài khoản -------------------
+- URL: {{url}}/user/updateUser
+- http: POST
+- dữ liệu thêm (header , raw Json )
+	header	token : ( token trả về từ tính năng login )
+	raw Json {
+			      	"name":"ngo da 1 update",
+      				"taiKhoan":"ngoda1",
+      				"matKhau": "9999",
+      				"SDT":"0909123123",
+      				"email":"ngoda1update@gmail.com",
+      				"avatar":null,
+      				"phanLoai":"Admin"
+		}
+	
+- tính năng này chỉ update name,matKhau,SDT,phanLoai
+--------------- tính năng upload Avatar -----------------------
+- URL: {{url}}/user/upload-avatar
+- http: POST
+- dữ liệu thêm (header , form-data )
+	header	token : ( token trả về từ tính năng login )
+	form-data {
+			 avatar : file ảnh(chọn từ máy tính)
+		}
+--------------- tính năng xóa user -----------------------------
+- URL: {{url}}/user/:id
+- http: DELETE
+- dữ liệu thêm (header)
+	token : ( token trả về từ tính năng login )
+- muốn xóa thì tài khoản phải admin
+- :id là id của user muốn xóa (có thể thấy tính năng lấy toàn bộ user )
+---------------- tính năng hủy vé đã đặt -----------------------
+- URL: {{url}}/user/deleteTicker/:id
+- http: POST
+- dữ liệu thêm (header)
+	token : ( token trả về từ tính năng login )
+- :id là mã ghế ( tìm thấy id trong table theaterschairs SQL  )
+---------------- tính năng reset password ----------------------
+- URL: {{url}}/user/reset-password
+- http: POST 
+- dữ liệu thêm ( raw Json )
+	{
+    		"email":"ngoda1@gmail.com"
+	}
+- email phải tồn tại trong tài khoản đã đăng kí
+- cập nhật email gửi trong .env (xem cụ thể ở đầu trang )
+---------------- tính năng lấy tất cả user ---------------------
+- URL: {{url}}/user/
+- http: GET
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++ Test API Movie ++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-------------- tính năng lấy tất cả movie ------------------
+- URL: {{url}}/movies/findAllMovie
+- http: GET 
+-------------- tính năng thêm mới movie --------------------
+- URL: {{url}}/movies/addMovie
+- http: POST
+- dữ liệu thêm (form-data , header)
+	form-data {
+			name: DataTypes.STRING, // tên phim không được trùng
+    			image: DataTypes.STRING, // hình ảnh phim ( file )
+    			poster: DataTypes.STRING, // poster phim ( file )
+    			thongTin: DataTypes.STRING, 
+    			imdb: DataTypes.INTEGER,
+    			theLoai: DataTypes.STRING,
+    			quocGia: DataTypes.STRING,
+    			status: DataTypes.STRING,
+    			trailer: DataTypes.STRING,
+    			ngayKhoiChieu: DataTypes.DATE, // kiểu dữ liệu json
+    			danhGia: DataTypes.INTEGER,
+    			luotXem: DataTypes.INTEGER,
+    			movieSearch: DataTypes.STRING
+		}
+
+	header	token : ( token trả về từ tính năng login )
+- muốn thêm movie thì tài khoản phải admin 
+---------------- tính năng lấy thông tin chi tiết phim ---------------------
+- URL: {{url}}/movies/findMovieDetail/:id
+- http: GET
+- :id là id của movie ( có thể tìm thấy danh sách tất cả movie )
+---------------- tính năng cập nhật movie ----------------------------------
+- URL: {{url}}/movies/updateMovieID/:id
+- http: POST
+- dữ liệu thêm (form-data , header)
+	form-data {
+			name: DataTypes.STRING, // tên phim không được trùng
+    			image: DataTypes.STRING, // hình ảnh phim ( file )
+    			poster: DataTypes.STRING, // poster phim ( file )
+    			thongTin: DataTypes.STRING, 
+    			imdb: DataTypes.INTEGER,
+    			theLoai: DataTypes.STRING,
+    			quocGia: DataTypes.STRING,
+    			status: DataTypes.STRING,
+    			trailer: DataTypes.STRING,
+    			ngayKhoiChieu: DataTypes.DATE, // kiểu dữ liệu json
+    			danhGia: DataTypes.INTEGER,
+    			luotXem: DataTypes.INTEGER,
+    			movieSearch: DataTypes.STRING
+		}
+
+	header	token : ( token trả về từ tính năng login )
+- muốn cập nhật movie thì tài khoản phải admin
+---------------- tính năng xóa phim -----------------------------------
+- URL: {{url}}/movies/delete/:id
+- http: DELETE
+- dữ liệu thêm ( header )
+- :id là id của movie ( có thể tìm thấy danh sách tất cả movie )
+	header	token : ( token trả về từ tính năng login )
+- muốn xóa movie thì tài khoản phải admin
+--------------- tính năng lấy movie theo thể loại ---------------------
+- URL: {{url}}/movies/findMovieTag/:theLoai
+- http: GET
+- :theLoai là theLoai trong movie(tìm trong chi tiết movie)
+- tìm tất cả movie có thể loại trùng khớp
+-------------- tính năng lấy movie lượt xem nhiều ---------------------
+- URL: {{url}}/movies/luot-xem/:luotXem 
+- http: GET
+- :luotXem là luotXem trong movie (tìm trong chi tiết movie)
+- tìm tất cả movie có lượt xem lớn lượt xem nhập vào
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++ Test Api Theater ( rap chiếu ) +++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+++++ Hệ Thống Rạp ++++
+
+-------------------tính năng lấy hệ toàn bộ hệ thống rạp------------------
+- URL: {{url}}/theater/HeThongRap
+- http: GET
+-------------------tính năng thêm hệ thống rap----------------------------
+- URL: {{url}}/theater/HeThongRap
+- http: POST
+- dữ liệu thêm (header, form-data)
+	form-data {
+			     maHeThong: DataTypes.STRING,
+      		             tenHeThong: DataTypes.STRING,
+      			     logo: DataTypes.STRING, // hinh anh(file)
+		}
+	header	token : ( token trả về từ tính năng login )
+- muốn thêm hệ thống rạp thì tài khoản phải admin
+--------------------tính năng xóa hệ thống rạp One -----------------------
+- URL: {{url}}/theater/HeThongRapOne/:maHeThong
+- http: DELETE
+- :maheThong (tìm thấy trong danh sách hệ thống rạp )
+-	header	token : ( token trả về từ tính năng login )
+- muốn xóa hệ thống rạp thì tài khoản phải admin
+(tính năng này chỉ xóa duy nhất hệ thống rạp)
+--------------------tính năng xóa hệ thống rap ALL -----------------------
+- URL: {{url}}/theater/HeThongRap/:maHeThong
+- http: DELETE- :maheThong (tìm thấy trong danh sách hệ thống rạp )
+-	header	token : ( token trả về từ tính năng login )
+- muốn xóa hệ thống rạp thì tài khoản phải admin
+(tính năng này xóa toàn bộ hệ thống bao gồm cụm rạp, phòng chiếu, lịch chiếu)
+
+++++ Cụm Rạp ++++
+
+------------------ tính năng lấy danh sách cụm rạp------------------------
+- URL: {{url}}/theater/CumRap/:maHeThong
+- http: GET
+- :maheThong (tìm thấy trong danh sách hệ thống rạp )
+----------------- tính năng thêm cụm rạp ---------------------------------
+- URL: {{url}}/theater/CumRap
+- http: POST
+- dữ liệu thêm ( header, form-data )
+  	form-data {
+			maHeThong: DataTypes.STRING,
+      			maCumRap: DataTypes.STRING,
+      			tenCumRap: DataTypes.STRING,
+      			thongTin: DataTypes.STRING,
+      			hinhAnhRap: DataTypes.STRING, // hinh anh(file)
+		}
+	header	token : ( token trả về từ tính năng login )
+- muốn thêm cụm rạp thì tài khoản phải admin
+-------------------- tính năng xóa cụm rạp One ----------------------------
+- URL: {{url}}/theater/CumRapOne/:maCumRap
+- http: DELETE 
+- :maCumRap ( tìm thấy trong thông tin Cụm Rạp )
+-	header	token : ( token trả về từ tính năng login )
+- muốn xóa cụm rạp thì tài khoản phải admin
+------------------- tính năng xóa cụm rạp All -----------------------------
+- URL: {{url}}/theater/CumRap/:maCumRap
+- http: DELETE 
+- :maCumRap ( tìm thấy trong thông tin Cụm Rạp )
+-	header	token : ( token trả về từ tính năng login )
+- muốn xóa cụm rạp thì tài khoản phải admin
+
+++++ Phòng Chiếu ++++
+
+----------------- tính năng danh sách phòng chiếu -------------------------
+- URL: {{url}}/theater/PhongChieu/:maCumRap
+- http: GET
+- :maCumRap ( tìm thấy trong thông tin Cụm Rạp )
+----------------- tính năng thêm phòng chiếu ------------------------------
+- URL: {{url}}/theater/PhongChieu
+- http: POST
+- dữ liệu thêm ( header, raw Json)
+	header	token : ( token trả về từ tính năng login )
+	raw Json {
+			"maCumRap" : "CGV-CaoThang",
+    			"tenPhongChieu" : "Phong 2"
+		}
+- muốn thêm phòng chiếu thì tài khoản phải admin
+----------------- tính năng xóa phòng chiếu ------------------------------
+- URL: {{url}}/theater/PhongChieu/:id
+- http: DELETE
+- :id là id phòng chiếu ( có thể tìm thấy trong danh sách phòng chiếu )
+- header  token : ( token trả về từ tính năng login )
+- muốn xóa phòng chiếu thì tài khoản phải admin
+
+++++ Lịch Chiếu ++++
+
+----------------- tính năng thêm lịch chiếu ------------------------------
+- URL: {{url}}/theater/LichChieu
+- http: POST
+- dữ liệu thêm (header, raw Json )
+- header  token : ( token trả về từ tính năng login )
+- raw json {
+		"maPhongChieu":1, // là id phòng chiếu
+    		"ngayKhoiChieu":"2021-09-28T10:40:00",
+    		"maPhim":3, // là id movie
+    		"giaVe":"95000"
+	   }
+- ngayKhoiChieu mới phải lớn hơn ngày khởi chiếu cũ 3h
+- tính năng này dành cho tài khoản admin
+- sau khi tao lịch chiếu thành công hệ thống sẽ tự thêm 20 ghế ngồi vào database
+--------------- tính năng xóa lịch chiếu --------------------------------
+- URL: {{url}}/theater/LichChieu/:id
+- http: DELETE
+- :id là mã lịch chiếu ( tìm thấy trong id lịch chiếu )
+- header  token : ( token trả về từ tính năng login )
+- xóa lịch chiếu tài khoản phải admin
+- sau khi xóa lịch chiếu sẽ xóa tất cả ghế đã tạo lúc tạo lịch chiếu,
+và xóa tất cả vé user đã đặt 
+--------------- tính năng mở rộng ---------------------------------------
+
+++++ danh sách tất cả ghế theo mã lịch chiếu ++++
+- URL: {{url}}/theater/listChair/:maLichChieu
+- http: GET
+- :maLichChieu ( là id trong lịch chiếu )
+
+++++ danh sách tất cả lịch chiếu theo mã hệ thống ++++
+- URL: {{url}}/theater/ShowTime-All/:maHeThong
+- http: GET
+- :maHeThong ( tìm thấy trong danh sách hệ thống rạp )
+
+++++ danh sách tất cả lịch chiếu theo mã phim ++++
+- URL: {{url}}/theater/ShowTime/:maPhim
+- http: GET
+- :maphim ( là id trong movie)
+
+------------------------ tính năng đặt vé ------------------------------
+- URL: {{url}}/theater/DatVe
+- http: POST
+- dữ liệu thêm (header, raw Json)
+- đăng nhập để lấy token (bắt buộc)
+- raw Json 
+		[
+    			{
+    				"id":97,
+    				"maLichChieu":"2222",
+    				"tenGhe":1,
+    				"status": 0,
+    				"maPhim": 1
+    			},
+    			{
+    				"id":98,
+    				"maLichChieu":"2222",
+    				"tenGhe":2,
+    				"status": 0,
+    				"maPhim": 1
+    			}
+		]
+- lấy mẫu đặt 2 ghế 
+- lưu ý id là mã ghế cần chính xác tuyệt đối (tìm id trong danh sách ghế theo mã lịch chiếu)
+
+------------------------- tính năng đặt vé nhanh --------------------------------------
+- URL: {{url}}/theater/booking-now/:maPhim
+- http: GET
+- :maPhim ( là id movie)
+------------------------ lấy toàn bộ dữ liệu ------------------------------------------
+- URL: {{url}}/theater/DanhSach
+- http: GET
+----------------------- lấy toàn bộ dữ liệu theo mã hệ thống --------------------------
+- URL: {{url}}/theater/DanhSach/:maHeThong
+- http: GET
+---------------------- lấy toàn bộ dữ liệu theo mã cụm rạp ----------------------------
+- URL: {{url}}/theater/DanhSachPhongChieu/:maCumRap
+- http: GET
+   
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++ Test Api Auth ( tai khoan ) ++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+---------------------------------- tính năng login ----------------------------------------------
+- URL: {{url}}/auth/login
+- http: POST
+- dữ liêu thêm (raw Json)
+	{
+   		"taiKhoan":"ngoda1",
+   		"matKhau":"9999"
+	}
+- đăng nhập thành công sẽ trả về token 
+
+
+
+
+
+
+
+
+
+
+
+

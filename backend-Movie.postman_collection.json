@@ -1,0 +1,1413 @@
+{
+	"info": {
+		"_postman_id": "bc237b15-6aac-487c-a0cb-e18518db8cdc",
+		"name": "backend-Movie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "movies",
+			"item": [
+				{
+					"name": "movieDetail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/findMovieDetail/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"findMovieDetail",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movie theo the loai",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/findMovieTag/hanh-dong vien-tuong",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"findMovieTag",
+								"hanh-dong vien-tuong"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addMovie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJuZ29kYTFAZ21haWwiLCJwaGFuTG9haSI6ImFkbWluIiwiaWF0IjoxNjM0OTYzNDgzLCJleHAiOjE2NDI3Mzk0ODN9.oGUaAQoWhiDd_pJKXO2XoN1ZB6Kt_4XU99-zEnRnBW8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "shark",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/phamhuy/Downloads/it-2.jpg"
+								},
+								{
+									"key": "poster",
+									"type": "file",
+									"src": "/C:/Users/phamhuy/Downloads/doraemon.jpg"
+								},
+								{
+									"key": "thongTin",
+									"value": "chua co",
+									"type": "text"
+								},
+								{
+									"key": "imdb",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "theLoai",
+									"value": "hanh-dong vien-tuong",
+									"type": "text"
+								},
+								{
+									"key": "quocGia",
+									"value": "USA",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "dang-chieu",
+									"type": "text"
+								},
+								{
+									"key": "trailer",
+									"value": "chua co",
+									"type": "text"
+								},
+								{
+									"key": "ngayKhoiChieu",
+									"value": "2021-09-18T16:09:00",
+									"type": "text"
+								},
+								{
+									"key": "danhGia",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "luotXem",
+									"value": "670",
+									"type": "text"
+								},
+								{
+									"key": "movieSearch",
+									"value": "superman sieu anh hung",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/movies/addMovie",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"addMovie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMovie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoieHh4eHh4eHh4eHh4eHgiLCJwaGFuTG9haSI6ImFkbWluIiwiaWF0IjoxNjM1MTMzNTU0LCJleHAiOjE2NDI5MDk1NTR9.YMQfEi5CekdwBE91wgk9sOZcQR5XyOUsll2n4df-sBY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "boruto the next",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/phamhuy/Downloads/tru-tien-thanh-van-chi-2.jpg"
+								},
+								{
+									"key": "poster",
+									"type": "file",
+									"src": "/C:/Users/phamhuy/Downloads/evengerEnd.jpg"
+								},
+								{
+									"key": "thongTin",
+									"value": "chua co",
+									"type": "text"
+								},
+								{
+									"key": "imdb",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "theLoai",
+									"value": "hanh-dong vien-tuong",
+									"type": "text"
+								},
+								{
+									"key": "quocGia",
+									"value": "USA",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "dang-chieu",
+									"type": "text"
+								},
+								{
+									"key": "trailer",
+									"value": "chua co",
+									"type": "text"
+								},
+								{
+									"key": "ngayKhoiChieu",
+									"value": "2021-09-18T16:09:00",
+									"type": "text"
+								},
+								{
+									"key": "danhGia",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "luotXem",
+									"value": "654",
+									"type": "text"
+								},
+								{
+									"key": "movieSearch",
+									"value": "superman sieu anh hung",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/movies/updateMovieID/8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"updateMovieID",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllMovie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/findAllMovie",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"findAllMovie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMovie",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJuZ29kYTF1cGRhdGVAZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNDcxMDE5NSwiZXhwIjoxNjQyNDg2MTk1fQ.4By9l08rWa1e3CcGqDuMycF7gZxwx6uj105xgRWVb1s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/movies/delete/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movie luot xem nhieu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/luot-xem/200",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"luot-xem",
+								"200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restore",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/restore/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"restore",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "theater",
+			"item": [
+				{
+					"name": "Lich chieu",
+					"item": [
+						{
+							"name": "add LichChieu",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJxdWFuZ0BnbWFpbC5jb20iLCJwaGFuTG9haSI6ImFkbWluIiwiaWF0IjoxNjM0NDY4ODY1LCJleHAiOjE2NDIyNDQ4NjV9.HLmMduKe3sydfms_yIn3kTZoZNQhtZkx3PB1dP5tt50",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"maPhongChieu\":19,\r\n    \"ngayKhoiChieu\":\"2021-10-20T11:45:00.000Z\",\r\n    \"maPhim\":1,\r\n    \"giaVe\":\"95000\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/theater/LichChieu",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"LichChieu"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete LichChieu",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJuZ29kYTF1cGRhdGVAZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNDYyMzE2OSwiZXhwIjoxNjQyMzk5MTY5fQ.l0ZePN8bHGARI5HO1INtQlwn4e5xxlB4Ino8_mIeCbg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/theater/LichChieu/2258",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"LichChieu",
+										"2258"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Phong Chieu",
+					"item": [
+						{
+							"name": "add Phongchieu",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJxdWFuZ0BnbWFpbC5jb20iLCJwaGFuTG9haSI6ImFkbWluIiwiaWF0IjoxNjM0NDY4ODY1LCJleHAiOjE2NDIyNDQ4NjV9.HLmMduKe3sydfms_yIn3kTZoZNQhtZkx3PB1dP5tt50",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"maCumRap\" : \"HBO-CaoThang\",\r\n    \"tenPhongChieu\" : \"Phong 2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/theater/PhongChieu",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"PhongChieu"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete PhongChieu",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/theater/PhongChieu/16",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"PhongChieu",
+										"16"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cum Rap",
+					"item": [
+						{
+							"name": "add CumRap",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJxdWFuZ0BnbWFpbC5jb20iLCJwaGFuTG9haSI6ImFkbWluIiwiaWF0IjoxNjM0NDY4ODY1LCJleHAiOjE2NDIyNDQ4NjV9.HLmMduKe3sydfms_yIn3kTZoZNQhtZkx3PB1dP5tt50",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "maHeThong",
+											"value": "HBO",
+											"type": "text"
+										},
+										{
+											"key": "maCumRap",
+											"value": "HBO-ThuDuc",
+											"type": "text"
+										},
+										{
+											"key": "tenCumRap",
+											"value": "jakuru thu duc quan 9",
+											"type": "text"
+										},
+										{
+											"key": "thongTin",
+											"value": "aaaaaaaaa",
+											"type": "text"
+										},
+										{
+											"key": "hinhAnhRap",
+											"type": "file",
+											"src": "/C:/Users/phamhuy/Downloads/naruto.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/theater/CumRap",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"CumRap"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete CumRap All",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJuZ29kYTF1cGRhdGVAZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNDcyNzQyOCwiZXhwIjoxNjQyNTAzNDI4fQ.AtJIxw1OlAvsTKgMPpbUs9ZBOzj47V9isWmWmJ-EHRM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/theater/CumRap/JKR-CaoThang",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"CumRap",
+										"JKR-CaoThang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "remove CumRap One",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJuZ29kYTF1cGRhdGVAZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNDcyNzQyOCwiZXhwIjoxNjQyNTAzNDI4fQ.AtJIxw1OlAvsTKgMPpbUs9ZBOzj47V9isWmWmJ-EHRM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/theater/CumRapOne/JKR-ThaoDien",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"CumRapOne",
+										"JKR-ThaoDien"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "He Thong Rap",
+					"item": [
+						{
+							"name": "add HeThongRap",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJxdWFuZ0BnbWFpbC5jb20iLCJwaGFuTG9haSI6ImFkbWluIiwiaWF0IjoxNjM0NDY4ODY1LCJleHAiOjE2NDIyNDQ4NjV9.HLmMduKe3sydfms_yIn3kTZoZNQhtZkx3PB1dP5tt50",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "maHeThong",
+											"value": "HBO",
+											"type": "text"
+										},
+										{
+											"key": "tenHeThong",
+											"value": "HBO",
+											"type": "text"
+										},
+										{
+											"key": "logo",
+											"type": "file",
+											"src": "/C:/Users/phamhuy/Downloads/naruto.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/theater/HeThongRap",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"HeThongRap"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete HeThongRap All",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJuZ29kYTF1cGRhdGVAZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNDYyNzc1MiwiZXhwIjoxNjQyNDAzNzUyfQ.kuHKQYf8zNRSp77miXa8sns7mgVilYMOvfgbdvDipsM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/theater/HeThongRap/KDH1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"HeThongRap",
+										"KDH1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete HeThongRap One",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJuZ29kYTF1cGRhdGVAZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNDYyNzc1MiwiZXhwIjoxNjQyNDAzNzUyfQ.kuHKQYf8zNRSp77miXa8sns7mgVilYMOvfgbdvDipsM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/theater/HeThongRapOne/JKR",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"HeThongRapOne",
+										"JKR"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJuZ29kYTF1cGRhdGVAZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNDYyNzc1MiwiZXhwIjoxNjQyNDAzNzUyfQ.kuHKQYf8zNRSp77miXa8sns7mgVilYMOvfgbdvDipsM",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dat ve",
+					"item": [
+						{
+							"name": "dat ve",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJxdWFuZ0BnbWFpbC5jb20iLCJwaGFuTG9haSI6ImFkbWluIiwiaWF0IjoxNjM0NDY4ODY1LCJleHAiOjE2NDIyNDQ4NjV9.HLmMduKe3sydfms_yIn3kTZoZNQhtZkx3PB1dP5tt50",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n    \"maGhe\":70,\r\n    \"maLichChieu\":\"2222\",\r\n    \"tenGhe\":1,\r\n    \"status\": 0,\r\n    \"maPhim\": 1\r\n    },\r\n    {\r\n    \"maGhe\":71,\r\n    \"maLichChieu\":\"2222\",\r\n    \"tenGhe\":2,\r\n    \"status\": 0,\r\n    \"maPhim\": 1\r\n    },\r\n        {\r\n    \"maGhe\":72,\r\n    \"maLichChieu\":\"2222\",\r\n    \"tenGhe\":2,\r\n    \"status\": 0,\r\n    \"maPhim\": 1\r\n    }\r\n]\r\n\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/theater/DatVe",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"DatVe"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "tat ca lich chieu theo maPhim",
+					"item": [
+						{
+							"name": "lich chieu theo maHeThong",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/theater/ShowTime-All/CGV",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"ShowTime-All",
+										"CGV"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "lich chieu theo maPhim",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/theater/ShowTime/8",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"ShowTime",
+										"8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "tat ca ghe theo maLichChieu",
+					"item": [
+						{
+							"name": "danh sach ghe theo maLichChieu",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/theater/listChair/2235",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"listChair",
+										"2235"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "dat ve nhanh",
+					"item": [
+						{
+							"name": "dat ve nhanh",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/theater/booking-now/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theater",
+										"booking-now",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findAll HeThongRap",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/theater/HeThongRap",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"theater",
+								"HeThongRap"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll CumRap",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/theater/CumRap/CGV",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"theater",
+								"CumRap",
+								"CGV"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll PhongChieu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/theater/PhongChieu/CGV-CaoThang",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"theater",
+								"PhongChieu",
+								"CGV-CaoThang"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll full",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/theater/DanhSach",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"theater",
+								"DanhSach"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll maHeThong",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/theater/DanhSach/CGV",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"theater",
+								"DanhSach",
+								"CGV"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Danhsach PhongChieu theo maCumRap",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/theater/DanhSachPhongChieu/CGV-CaoThang",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"theater",
+								"DanhSachPhongChieu",
+								"CGV-CaoThang"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "find all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"name\":\"le van \",\r\n      \"taiKhoan\":\"ty99\",\r\n      \"matKhau\": \"9999\",\r\n      \"SDT\":\"0909123123\",\r\n      \"email\":\"tyem1@gmail.com\",\r\n      \"avatar\":null,\r\n      \"phanLoai\":\"client\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user Detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZW9lbTFAZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNTc0MzE5OCwiZXhwIjoxNjQzNTE5MTk4fQ.Ae8iQ60Ar5DpRvUT2bH5Cp-RUDAVpZS6t-AR2kTu6Uc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/findDetail",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"findDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZW9lbTFAZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNTc0MzE5OCwiZXhwIjoxNjQzNTE5MTk4fQ.Ae8iQ60Ar5DpRvUT2bH5Cp-RUDAVpZS6t-AR2kTu6Uc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"name\":\"le van teo update\",\r\n      \"taiKhoan\":\"ngoda11\",\r\n      \"matKhau\": \"9999\",\r\n      \"SDT\":\"0909123123\",\r\n      \"email\":\"teoem@gmail.com\",\r\n      \"avatar\":null,\r\n      \"phanLoai\":\"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/updateUser",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload avatar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZW9lbTFAZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNTc0MzE5OCwiZXhwIjoxNjQzNTE5MTk4fQ.Ae8iQ60Ar5DpRvUT2bH5Cp-RUDAVpZS6t-AR2kTu6Uc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/phamhuy/Downloads/it-2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/upload-avatar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"upload-avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImVtYWlsIjoidGVvZW1AZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNDM4Mjc4MCwiZXhwIjoxNjQyMTU4NzgwfQ.hck-qI3H3KmyWszeE2Hf9iS6zbSiIEzyUL9VjJXsusg",
+								"description": "token admin",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoibmdvZGFAZ21haWwuY29tIiwicGhhbkxvYWkiOiJjbGllbnQiLCJpYXQiOjE2MzQzODc3NzEsImV4cCI6MTY0MjE2Mzc3MX0.tZ3sjmgfoi7YT-z1revFKQeVDVE89B8XbSUSPyTFpwY",
+								"description": "token client",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userDetailTicker",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJxdWFuZ0BnbWFpbC5jb20iLCJwaGFuTG9haSI6ImFkbWluIiwiaWF0IjoxNjM0NDY4ODY1LCJleHAiOjE2NDIyNDQ4NjV9.HLmMduKe3sydfms_yIn3kTZoZNQhtZkx3PB1dP5tt50",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/userDetailAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"userDetailAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete ticker",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJxdWFuZ0BnbWFpbC5jb20iLCJwaGFuTG9haSI6ImFkbWluIiwiaWF0IjoxNjM0NDY4ODY1LCJleHAiOjE2NDIyNDQ4NjV9.HLmMduKe3sydfms_yIn3kTZoZNQhtZkx3PB1dP5tt50",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/deleteTicker/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"deleteTicker",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ngoda1@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/reset-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"taiKhoan\":\"teo99\",\r\n   \"matKhau\":\"9999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carousel",
+			"item": [
+				{
+					"name": "get all carousel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/carousel/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carousel",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Carousel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZW9lbTFAZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNDgwMjM3MCwiZXhwIjoxNjQyNTc4MzcwfQ.FvLF4U0q6hxmqlL5j-QD7CvUzJxmi4lVA_Xup_o3Sl0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Gozilla phim moi 2022",
+									"type": "text"
+								},
+								{
+									"key": "imageCarousel",
+									"type": "file",
+									"src": "/C:/Users/phamhuy/Downloads/it-2.jpg"
+								},
+								{
+									"key": "toLink",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/carousel/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carousel",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update carousel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZW9lbTFAZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNDgwMjM3MCwiZXhwIjoxNjQyNTc4MzcwfQ.FvLF4U0q6hxmqlL5j-QD7CvUzJxmi4lVA_Xup_o3Sl0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Gozilla 1998 kingkong",
+									"type": "text"
+								},
+								{
+									"key": "imageCarousel",
+									"type": "file",
+									"src": "/C:/Users/phamhuy/Downloads/giam-cam-quy-du.jpg"
+								},
+								{
+									"key": "toLink",
+									"value": "8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/carousel/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carousel",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete carousel",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZW9lbTFAZ21haWwuY29tIiwicGhhbkxvYWkiOiJhZG1pbiIsImlhdCI6MTYzNDgwMjM3MCwiZXhwIjoxNjQyNTc4MzcwfQ.FvLF4U0q6hxmqlL5j-QD7CvUzJxmi4lVA_Xup_o3Sl0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/carousel/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carousel",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "news",
+			"item": [
+				{
+					"name": "get all news",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/news/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"news",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create news",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "gozilla vs king",
+									"type": "text"
+								},
+								{
+									"key": "imageNews",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "textOne",
+									"value": "aaaaaaaaaaaaaaaaaaa",
+									"type": "text"
+								},
+								{
+									"key": "imageList",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "textList",
+									"value": "aaaaaaa####bbbbbbbb####cccccc",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "new",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/news/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"news",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete news",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/news/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"news",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
